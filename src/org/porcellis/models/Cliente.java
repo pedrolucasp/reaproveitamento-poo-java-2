@@ -9,12 +9,14 @@ public class Cliente {
 	private String telefone;
 
 	private List<Endereco> enderecos;
+	private List<Pedido> pedidos;
 
 	public Cliente(String nomeCompleto, String email, String telefone) {
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.telefone = telefone;
 		this.enderecos = new ArrayList<Endereco>();
+		this.pedidos = new ArrayList<Pedido>();
 	}
 
 	public String getNomeCompleto() {
