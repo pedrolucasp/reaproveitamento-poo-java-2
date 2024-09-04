@@ -27,9 +27,12 @@ public class Produto {
 		this.precoDeVenda = precoDeVenda;
 		this.fornecedor = fornecedor;
 		this.fornecimentos = new ArrayList<>();
+
+		// Se adiciona o produto na lista de produtos do fornecedor
+		fornecedor.adicionarProduto(this);
 	}
 
-	public void adicionaForncimento(Fornecimento fornecimento) {
+	public void adicionarFornecimento(Fornecimento fornecimento) {
 		this.fornecimentos.add(fornecimento);
 	}
 
@@ -91,5 +94,14 @@ public class Produto {
 
 	public void setFornecedor(Fornecedor fornecedor) {
 		this.fornecedor = fornecedor;
+	}
+
+	public String toString() {
+		return String.format(
+			"Produto: %s, SKU: %s, Preço de venda: %s",
+			this.nome,
+			this.sku,
+			this.precoDeVenda
+		);
 	}
 }
