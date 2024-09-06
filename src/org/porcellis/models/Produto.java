@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.porcellis.utils.Formatador;
+
 public class Produto {
 	private String sku;
 	private String nome;
@@ -98,10 +100,11 @@ public class Produto {
 
 	public String toString() {
 		return String.format(
-			"Produto: %s, SKU: %s, Preço de venda: %s",
+			"Produto: %s, SKU: %s, Preço de Custo: %s, Preço de venda: %s",
 			this.nome,
 			this.sku,
-			this.precoDeVenda
+			Formatador.formatarMoeda(this.precoDeCusto.doubleValue()),
+			Formatador.formatarMoeda(this.precoDeVenda.doubleValue())
 		);
 	}
 }
