@@ -10,10 +10,8 @@ public class Endereco {
 	private Estado estado;
 	private Cidade cidade;
 
-	private Cliente cliente;
-
 	public Endereco(String tipoDeLogradouro, String logradouro, String numero,
-			String bairro, String cep, Estado estado, Cidade cidade, Cliente cliente) {
+			String bairro, String cep, Estado estado, Cidade cidade) {
 		this.tipoDeLogradouro = tipoDeLogradouro;
 		this.logradouro = logradouro;
 		this.numero = numero;
@@ -22,16 +20,6 @@ public class Endereco {
 
 		this.estado = estado;
 		this.cidade = cidade;
-
-		this.cliente = cliente;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
 	}
 
 	public String getTipoDeLogradouro() {

@@ -2,11 +2,14 @@ package org.porcellis.controllers;
 
 import org.porcellis.models.ClientePessoaFisica;
 import org.porcellis.models.ClientePessoaJuridica;
+import org.porcellis.models.EnderecoDeCobranca;
+import org.porcellis.models.EnderecoDeEntrega;
 import org.porcellis.models.Cliente;
 
 public class ClienteController {
 	public <T extends Cliente> T criarCliente(String nome, String email, String telefone,
-			String documento, Class<T> tipoCliente) {
+			String documento, EnderecoDeEntrega entrega, EnderecoDeCobranca cobranca,
+			Class<T> tipoCliente) {
 
 		if (tipoCliente == ClientePessoaFisica.class) {
 			return tipoCliente.cast(
@@ -14,6 +17,8 @@ public class ClienteController {
 					nome,
 					email,
 					telefone,
+					cobranca,
+					entrega,
 					documento
 				)
 			);
@@ -23,6 +28,8 @@ public class ClienteController {
 					nome,
 					email,
 					telefone,
+					cobranca,
+					entrega,
 					documento
 				)
 			);

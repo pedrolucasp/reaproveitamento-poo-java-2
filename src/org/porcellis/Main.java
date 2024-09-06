@@ -8,21 +8,6 @@ public class Main {
 	public static void main(String[] args) {
 		ClienteController clienteController = new ClienteController();
 
-		ClientePessoaFisica pessoaFisica = clienteController.criarCliente(
-			"João da Silva",
-			"james@hetfield.com",
-			"53984233222",
-			"123.456.789-00",
-			ClientePessoaFisica.class
-		);
-
-		ClientePessoaJuridica pessoaJuridica = clienteController.criarCliente(
-			"Metallica LTDA",
-			"hi@metallica.com",
-			"53984233222",
-			"12.345.678/0001-00",
-			ClientePessoaJuridica.class
-		);
 
 		EnderecoDeEntrega entrega = new EnderecoDeEntrega(
 			"Rua",
@@ -31,8 +16,7 @@ public class Main {
 			"Centro",
 			"90000-000",
 			Estado.RS,
-			Cidade.PELOTAS,
-			pessoaFisica
+			Cidade.PELOTAS
 		);
 
 		EnderecoDeCobranca cobranca = new EnderecoDeCobranca(
@@ -42,8 +26,27 @@ public class Main {
 			"Bonfim",
 			"90000-000",
 			Estado.RS,
-			Cidade.PORTO_ALEGRE,
-			pessoaFisica
+			Cidade.PORTO_ALEGRE
+		);
+
+		ClientePessoaFisica pessoaFisica = clienteController.criarCliente(
+			"João da Silva",
+			"james@hetfield.com",
+			"53984233222",
+			"123.456.789-00",
+			entrega,
+			cobranca,
+			ClientePessoaFisica.class
+		);
+
+		ClientePessoaJuridica pessoaJuridica = clienteController.criarCliente(
+			"Metallica LTDA",
+			"hi@metallica.com",
+			"53984233222",
+			"12.345.678/0001-00",
+			entrega,
+			cobranca,
+			ClientePessoaJuridica.class
 		);
 
 		Fornecedor fornecedor = new Fornecedor(

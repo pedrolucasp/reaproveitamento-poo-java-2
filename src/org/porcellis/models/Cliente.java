@@ -8,14 +8,19 @@ public class Cliente {
 	private String email;
 	private String telefone;
 
-	private List<Endereco> enderecos;
+	private EnderecoDeCobranca cobranca;
+	private EnderecoDeEntrega entrega;
 	private List<Pedido> pedidos;
 
-	public Cliente(String nomeCompleto, String email, String telefone) {
+	public Cliente(String nomeCompleto, String email, String telefone,
+			EnderecoDeCobranca cobranca, EnderecoDeEntrega entrega) {
+
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.telefone = telefone;
-		this.enderecos = new ArrayList<Endereco>();
+		this.cobranca = cobranca;
+		this.entrega = entrega;
+
 		this.pedidos = new ArrayList<Pedido>();
 	}
 
@@ -43,11 +48,19 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public List<Endereco> getEnderecos() {
-		return enderecos;
+	public EnderecoDeCobranca getCobranca() {
+		return cobranca;
 	}
 
-	public void setEnderecos(List<Endereco> enderecos) {
-		this.enderecos = enderecos;
+	public void setCobranca(EnderecoDeCobranca cobranca) {
+		this.cobranca = cobranca;
+	}
+
+	public EnderecoDeEntrega getEntrega() {
+		return entrega;
+	}
+
+	public void setEntrega(EnderecoDeEntrega entrega) {
+		this.entrega = entrega;
 	}
 }
