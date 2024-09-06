@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 public class Main {
 	public static void main(String[] args) {
 		ClienteController clienteController = new ClienteController();
+		ProdutoController produtoController = new ProdutoController();
 
 
 		EnderecoDeEntrega entrega = new EnderecoDeEntrega(
@@ -53,26 +54,21 @@ public class Main {
 			"12.341.555/0001-01", "Camisetaria", "oi@camisetaria.com", "53949199192"
 		);
 
-
-		Produto produto1 = new Produto(
-			// Generate a random sku string
-			"SKU" + Math.random(),
+		Produto camisetaMetallica = produtoController.criarProduto(
 			"Camiseta Metallica",
-			"Camiseta preta com estampa do Metallica",
-			25,
-			new BigDecimal(49.90),
-			new BigDecimal(39.90),
+			"Camiseta preta com logo do Metallica",
+			50,
+			49.90,
+			59.90,
 			fornecedor
 		);
 
-		Produto produto2 = new Produto(
-			// Generate a random sku string
-			"SKU" + Math.random(),
+		Produto camisetaJudasPriest = produtoController.criarProduto(
 			"Camiseta Judas Priest",
-			"Camiseta preta com estampa do Judas Priest",
-			15,
-			new BigDecimal(45.90),
-			new BigDecimal(38.90),
+			"Camiseta preta com logo do Judas Priest",
+			40,
+			49.90,
+			59.90,
 			fornecedor
 		);
 
