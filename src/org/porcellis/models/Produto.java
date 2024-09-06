@@ -34,6 +34,11 @@ public class Produto {
 		fornecedor.adicionarProduto(this);
 	}
 
+	// XXX: O que rola se é zero?
+	public void atualizaEstoque(Integer quantidade) {
+		this.estoque -= quantidade;
+	}
+
 	public void adicionarFornecimento(Fornecimento fornecimento) {
 		this.fornecimentos.add(fornecimento);
 	}

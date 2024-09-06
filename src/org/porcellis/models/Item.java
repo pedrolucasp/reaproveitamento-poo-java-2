@@ -9,11 +9,24 @@ public class Item {
 	private Pedido pedido;
 	private Produto produto;
 
-	public Item(Integer quantidade, BigDecimal total, Pedido pedido, Produto produto) {
+	public Item(Produto produto, Integer quantidade) {
 		this.quantidade = quantidade;
-		this.total = total;
+		this.produto = produto;
+
+		this.total = calculaTotal();
+	}
+
+	public Item(Integer quantidade, Pedido pedido, Produto produto) {
 		this.pedido = pedido;
 		this.produto = produto;
+		this.quantidade = quantidade;
+
+		this.total = calculaTotal();
+	}
+
+	public BigDecimal calculaTotal() {
+		return produto.getPrecoDeVenda()
+			.multiply(BigDecimal.valueOf(quantidade));
 	}
 
 	public Integer getQuantidade() {

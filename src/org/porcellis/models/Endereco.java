@@ -77,5 +77,18 @@ public class Endereco {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
+
+	public String toString() {
+		return String.format(
+			"%s %s, %s, %s, %s, %s - %s",
+			tipoDeLogradouro,
+			logradouro,
+			numero,
+			bairro,
+			cidade,
+			estado,
+			cep
+		);
+	}
 }
 
